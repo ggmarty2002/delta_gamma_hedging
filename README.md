@@ -1,69 +1,64 @@
 # Option Pricing and Hedging Strategies
 
-This project implements various option pricing models and hedging strategies using the Black-Scholes framework. The project explores delta hedging, implied volatility calculation, and portfolio replication for European call options.
+This repository contains implementations of various option pricing models and hedging strategies as part of the Model Calibration course (TD3).
 
-## Overview
+## Repository Contents
 
-This project is structured as a series of exercises related to options pricing and hedging:
+- **Données TD3.xlsx**: Excel file containing the market data (stock prices, option prices, etc.)
+- **rules_hedging_project.pdf**: instructions for the assignment
+- **notebook_hedging_project.ipynb**: Jupyter notebook containing the implementation of different hedging strategies and models
 
-1. **Basic Delta Hedging**: Implementation of a simple delta hedging strategy for a European call option
-2. **Delta-Gamma Hedging**: Enhanced hedging using a second option to control for gamma risk
-3. **Implied Volatility Calculation**: Extraction of market implied volatilities using Newton-Raphson and Bisection methods
-4. **Dynamic Hedging with Market IV**: Implementation of delta hedging using market-implied volatility
-5. **Advanced Hedging with Volatility Risk**: Implementation of a hedging strategy that accounts for changes in implied volatility
+## Project Overview
 
-## Requirements
+This project explores financial derivatives modeling with focus on:
 
-- Python 3.x
-- Libraries:
-  - pandas
-  - numpy
-  - scipy
-  - matplotlib
-  - datetime
+1. **Basic Delta Hedging** (Question 1)
+   - Implementation of a dynamic delta hedging strategy for a European call option
+   - Comparison of the hedged portfolio value with theoretical option price
+
+2. **Delta-Gamma Hedging** (Question 2)
+   - Use of two options to hedge both delta and gamma risk
+   - Implementation of a more stable hedging strategy using a second option
+
+3. **Implied Volatility Calculation** (Question 4)
+   - Implementation of Newton-Raphson and Bisection methods to extract implied volatility
+   - Comparison of implied volatilities across different strike prices
+
+4. **Market Implied Volatility Hedging** (Question 5)
+   - Implementation of delta hedging using market implied volatility instead of constant volatility
+
+5. **Advanced Volatility-Sensitive Hedging** (Question 5+)
+   - Extension of hedging to account for changes in implied volatility
+   - Using multiple options to hedge against both price and volatility risks
 
 ## Data
 
-The project uses data from 'Données TD3.xlsx' which contains:
+The file `Données TD3.xlsx` contains:
 - Daily stock prices
-- Option prices for different strike prices (6.0 and 6.5)
+- Option prices at different strike prices (6.0 and 6.5)
 - Trading dates
+- All data necessary to implement the hedging strategies
 
-## Key Components
+## Requirements
 
-### Black-Scholes Model
+The code requires the following Python libraries:
+- pandas
+- numpy
+- scipy
+- matplotlib
+- datetime
 
-The project implements the Black-Scholes formula for European call options, calculating:
-- Option prices
-- Delta (for hedging)
-- Gamma (for second-order risk)
-- Vega (for volatility sensitivity)
+## Results Visualization
 
-### Implied Volatility Calculation
+The notebook includes multiple visualizations:
+- Comparison between theoretical option prices and hedged portfolio values
+- Evolution of implied volatility over time for different strike prices
+- Sensitivity of option prices to volatility changes
 
-Two methods are implemented for extracting implied volatility from market prices:
-- Newton-Raphson method (faster convergence)
-- Bisection method (more stable)
+## Mathematical Model
 
-### Hedging Strategies
-
-1. **Delta Hedging**: Dynamically adjusting stock position based on option delta
-2. **Delta-Gamma Hedging**: Using two options to hedge against both price changes and convexity
-3. **Volatility-Aware Hedging**: Accounting for changes in implied volatility when constructing portfolios
-
-## Usage
-
-1. Load the Jupyter notebook in a compatible environment
-2. Ensure 'Données TD3.xlsx' is in the same directory
-3. Run the cells sequentially to see the results of each hedging strategy
-
-## Visualization
-
-The project includes visualizations of:
-- Option prices vs. portfolio values for different hedging strategies
-- Implied volatilities across time for different strike prices
-- Option price sensitivity to volatility
-
-## Results
-
-The notebook demonstrates how different hedging strategies perform in replicating option payoffs, with visualizations comparing the theoretical option prices with the hedged portfolio values.
+The project implements the Black-Scholes model for European call options:
+- Call price calculation
+- Delta and gamma computation for hedging
+- Vega calculation for volatility sensitivity
+- Implied volatility extraction from market prices
