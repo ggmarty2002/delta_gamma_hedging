@@ -4,7 +4,7 @@ This project implements various option pricing models and hedging strategies usi
 
 ## Overview
 
-This project is structured as a series of exercises (TD3) related to options pricing and hedging:
+This project is structured as a series of exercises related to options pricing and hedging:
 
 1. **Basic Delta Hedging**: Implementation of a simple delta hedging strategy for a European call option
 2. **Delta-Gamma Hedging**: Enhanced hedging using a second option to control for gamma risk
